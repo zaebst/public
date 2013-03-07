@@ -3,8 +3,10 @@
 """
 Thanks to:
   Vladimir Petricevic of City College for a great lab that covered the convergence and recursion relations for poisson distributions
-  Eli Bendersky for information on embedding matplotlib graphs in Qt http://eli.thegreenplace.net/2009/01/20/matplotlib-with-pyqt-guis/
+  Eli Bendersky for PyQt and matplotlib examples used in this gui http://eli.thegreenplace.net/2009/01/20/matplotlib-with-pyqt-guis/
   James Battat for info on fitting distributions with scipy https://www.cfa.harvard.edu/~jbattat/computer/python/science/#fitPoly
+
+To do:  The convergence is based upon a higher mean and having a large number of sample points.  Another slider to control the number of datapoints via changing the linspace arguments would show this clearly.
 
 """
 import sys, os, random

@@ -90,9 +90,15 @@ class AppForm(QMainWindow):
         self.axes.clear()
         self.axes.axis([0,60,-.10,0.30])
         self.axes.set_autoscale_on(False)
-        self.axes.plot(x_coords, y_coords, 'k.')
-        self.axes.plot(x_coords, y_coords_gaussian, 'r-')
-        self.axes.plot(x_coords, difference_array, 'b.')
+        p1, = self.axes.plot(x_coords, y_coords, 'k.')
+        p2, = self.axes.plot(x_coords, y_coords_gaussian, 'r-')
+        p3, = self.axes.plot(x_coords, difference_array, 'b.')
+        l1 = self.axes.legend([p1], ["Recursion Formula"], loc=1) # 1 is upper right
+        l2 = self.axes.legend([p2], ["Gaussian Fit"], loc=5)      # 5 is right
+        l3 = self.axes.legend([p3], ["Difference: Formula and Fit"], loc=4) # 4 is lower right
+        self.axes.add_artist(l1)
+        self.axes.add_artist(l2)
+        self.axes.add_artist(l3)
         self.canvas.draw()
         self.refreshTable(table_data,table_headers)
 

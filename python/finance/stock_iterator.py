@@ -3,19 +3,14 @@
   usage:  ./stock_iterator.py --stock=TICKER
   Given a file of ticker data in TICKER_history.csv, the program calculates a the volatility for a sliding window using a stocks change in closing prices.  Each days change in stock price is expressed in terms of the sliding window standard deviations.  Finally, the stock price, corresponding volatility, and days change in terms of standard deviations are graphed with matplotlib.
 '''
-import string
 import scipy
-from scipy import stats
 import numpy
 import math
-from math import log
 import time
 import optparse
-from optparse import OptionParser
+#from optparse import OptionParser
 import re
 import matplotlib.pyplot
-import csv
-import datetime
 
 
 class IterRegistry(type):

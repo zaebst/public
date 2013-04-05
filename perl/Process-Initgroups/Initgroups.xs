@@ -12,6 +12,7 @@
   SysRet automatically converts system return codes to perl return codes.
   If RETVAL is -1, the SysRet type returns undef 
   If RETVAL is  0, the SysRet type returns the idomatic "0 but true"
+
 */
 typedef int SysRet;
 
@@ -42,4 +43,5 @@ initgroups(user,group)
         }
     OUTPUT:
             RETVAL
+
 

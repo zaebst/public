@@ -8,3 +8,5 @@ fallback/const-c.inc
 fallback/const-xs.inc
 lib/Process/Initgroups.pm
 Initgroups.xs
+typemap
+META.yml

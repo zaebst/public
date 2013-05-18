@@ -1,0 +1,49 @@
+" Turn on line numbering. Turn it off with "set nonu" 
+set nu 
+
+" Set syntax on
+syntax on
+
+" Indent automatically depending on filetype
+filetype indent on
+set autoindent
+set smartindent
+
+" Case insensitive search
+set ic
+
+" Higlhight search
+set hls
+
+" Wrap text instead of being on one line
+set lbr
+
+" Change colorscheme from default to delek
+colorscheme delek
+set nocompatible
+
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set showmatch
+set virtualedit=all
+
+" Set stuff for python programming
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+autocmd BufWritePre *.py :%s/\s\+$//e
+
+" Allow backspacing over everything in insert mode.
+set backspace=indent,eol,start
+" Tell vim which characters to show for expanded TABs,
+" trailing whitespace, and end-of-lines. VERY useful!
+set listchars=tab:>-,trail:·,eol:$
+
+" Path/file expansion in colon-mode.
+set wildmode=list:longest
+set wildchar=<TAB>
+
+" Use brighter colors if your xterm has a dark background.
+if &term =~ "xterm"
+	  set background=dark
+endif
+

@@ -1,11 +1,9 @@
-# My .zshrc file
 #
-# Written by Matthew Blissett.
+# Slightly modified version of Blissett's zsh configuration.  
+#
+# Originally written by Matthew Blissett.
 #
 # Latest version available from <http://matt.blissett.me.uk/linux/zsh/zshrc>
-#
-# Some functions taken from various web sites/mailing lists, others written
-# myself.
 #
 # Last updated 2010-10-21
 #
@@ -162,13 +160,6 @@ alias -g T='| tail'
 alias -g N='> /dev/null'
 alias -g E='2> /dev/null'
 
-# SSH aliases
-#alias 'sshb=ssh matt@blissett.me.uk'
-
-# SSH to shell[1234].doc.ic.ac.uk at random
-#sshdoc() {
-#    ssh mrb04@shell$(($RANDOM % 4 + 1)).doc.ic.ac.uk $*
-#}
 
 # Automatically background processes (no output to terminal etc)
 alias 'z=echo $RANDOM > /dev/null; zz'
@@ -188,13 +179,6 @@ f() {
     echo "find . -iname \"*$1*\""
     find . -iname "*$1*"
 }
-
-# Remap Dvorak-Qwerty quickly
-alias 'aoeu=setxkbmap gb' # (British keyboard layout)
-alias 'asdf=setxkbmap gb dvorak 2> /dev/null || setxkbmap dvorak gb 2> /dev/null || setxkbmap dvorak'
-
-# Update config files (master copies stored on server)
-alias rsync-config='rsync -av --delete blissett.me.uk:Config/ ~/.matt-config/'
 
 # Clear konsole history
 #alias 'zaph=dcop $KONSOLE_DCOP_SESSION clearHistory' For KDE3
@@ -277,7 +261,7 @@ jrotate-r () {
 }
 
 #perl library settings
-export PERL5LIB=/usr/local/share/perl/:/usr/share/perl5/:/usr/lib/perl5/
+#export PERL5LIB=/usr/local/share/perl/:/usr/share/perl5/:/usr/lib/perl5/
 
 # MySQL prompt
 export MYSQL_PS1="\R:\m:\s \h> "
@@ -306,7 +290,6 @@ compinit
 # End of lines added by compinstall
 
 zstyle -d users
-#zstyle ':completion:*' users mrb04 matt
 zstyle ':completion:*:*:*:users' ignored-patterns \
     adm apache bin daemon games gdm halt ident junkbust lp mail mailnull \
     named news nfsnobody nobody nscd ntp operator pcap postgres radvd \
@@ -331,8 +314,6 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 #zstyle ':completion:*:(all-|)files' file-patterns '(*~|\\#*\\#):backup-files' 'core(|.*):core\ files' '*:all-files'
 
 zstyle ':completion:*:*:rmdir:*' file-sort time
-
-zstyle ':completion:*' local matt.blissett.me.uk /web/matt.blissett.me.uk
 
 # CD to never select parent directory
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
